@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openapi-generator"
+name = "openapi-spec-generator"
 version = "0.1.0"
 description = "Generate OpenAPI specifications for any REST API project directory."
 readme = "README.md"
