@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openapi-generator"
+version = "0.1.0"
+description = "Generate OpenAPI specifications for any REST API project directory."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+claude = ["anthropic>=0.25"]
+openai = ["openai>=1.0"]
+all    = ["anthropic>=0.25", "openai>=1.0"]
+dev    = ["pytest>=8.0", "pytest-cov>=5.0"]
+
+[project.scripts]
+openapi-gen = "openapi_generator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
